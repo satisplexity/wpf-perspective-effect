@@ -1,4 +1,11 @@
 ﻿<Window
     x:Class="WPFPerspectiveEffect.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"/>
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    WindowStartupLocation="CenterScreen"
+    Width="1000"
+    Height="700"
+    ThemeMode="Dark"
+    UseLayoutRounding="True">
+    
+</Window>
