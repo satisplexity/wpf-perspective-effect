@@ -6,10 +6,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <ApplicationIcon>WPFPerspectiveEffect.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Fonts\Comfortaa.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="WPFPerspectiveEffect.ico" />
   </ItemGroup>
 
   <ItemGroup>
