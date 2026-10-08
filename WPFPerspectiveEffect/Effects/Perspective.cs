@@ -17,6 +17,8 @@ public sealed class PerspectiveEffect : ShaderEffect
     {
         PixelShader = _pixelShader;
 
+        DdxUvDdyUvRegisterIndex = 9;
+
         UpdateShaderValue(InputProperty);
 
         UpdateShaderValue(M11Property);
