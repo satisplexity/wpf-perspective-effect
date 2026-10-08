@@ -187,6 +187,30 @@ public sealed class Joystick : Button
     private TextBlock? _offsetInfo;
     private TranslateTransform? _stickPosition;
 
+    public Joystick()
+    {
+        Loaded += OnFirstLoaded;
+    }
+
+    private void OnFirstLoaded(object sender, RoutedEventArgs e)
+    {
+        // Инициализируем только один раз.
+        Loaded -= OnFirstLoaded;
+
+        Point center = new(
+            (MinX + MaxX) / 2,
+            (MinY + MaxY) / 2);
+
+        SetCurrentValue(OffsetProperty, center);
+
+        UpdateStickPosition();
+
+        if (_offsetInfo is not null)
+            _offsetInfo.Text = $"[ {center.X:F2} ; {center.Y:F2} ]";
+
+        OffsetChanged?.Invoke(this, center);
+    }
+
     public override void OnApplyTemplate()
     {
         if (_area is not null)

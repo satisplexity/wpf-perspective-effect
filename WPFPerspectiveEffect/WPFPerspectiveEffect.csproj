@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <None Remove="Fonts\Comfortaa.ttf" />
+    <None Remove="Shaders\Perspective.ps" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
 
   <ItemGroup>
     <Resource Include="Fonts\Comfortaa.ttf" />
+    <Resource Include="Shaders\Perspective.ps" />
   </ItemGroup>
 
 </Project>

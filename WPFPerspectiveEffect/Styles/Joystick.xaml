@@ -24,7 +24,7 @@
 
         <Setter
             Property="Foreground"
-            Value="#99E"/>
+            Value="#A74CDB"/>
 
         <Setter
             Property="FontWeight"
@@ -267,8 +267,8 @@
 
                                     <Ellipse
                                         x:Name="PART_Stick"
-                                        Fill="#99E"
-                                        Stroke="#77A"
+                                        Fill="#A74CDB"
+                                        Stroke="#6C2F8E"
                                         StrokeThickness="2"
                                         Width="10"
                                         Height="10"
