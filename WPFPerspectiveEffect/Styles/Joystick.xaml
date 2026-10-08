@@ -1,0 +1,307 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:WPFPerspectiveEffect.Controls">
+
+    <Style
+        x:Key="Joystick.TextBlockBase"
+        TargetType="{x:Type TextBlock}">
+
+        <Setter
+            Property="FontFamily"
+            Value="{StaticResource Comfortaa}"/>
+
+        <Setter
+            Property="HorizontalAlignment"
+            Value="Center"/>
+
+    </Style>
+    
+    <Style
+        x:Key="Joystick.Title"
+        TargetType="{x:Type TextBlock}"
+        BasedOn="{StaticResource Joystick.TextBlockBase}">
+
+        <Setter
+            Property="Foreground"
+            Value="#99E"/>
+
+        <Setter
+            Property="FontWeight"
+            Value="Black"/>
+
+        <Setter
+            Property="FontSize"
+            Value="16"/>
+
+    </Style>
+
+    <Style
+        x:Key="Joystick.Info"
+        TargetType="{x:Type TextBlock}"
+        BasedOn="{StaticResource Joystick.TextBlockBase}">
+
+        <Setter
+            Property="Foreground"
+            Value="#99A"/>
+
+        <Setter
+            Property="FontWeight"
+            Value="Bold"/>
+
+        <Setter
+            Property="FontSize"
+            Value="12"/>
+
+    </Style>
+
+    <Style
+        x:Key="Joystick.MinMaxText"
+        TargetType="{x:Type TextBlock}"
+        BasedOn="{StaticResource Joystick.TextBlockBase}">
+
+        <Setter
+            Property="Foreground"
+            Value="#AAB"/>
+
+        <Setter
+            Property="FontSize"
+            Value="10"/>
+
+        <Setter
+            Property="FontWeight"
+            Value="Bold"/>
+
+        <Setter
+            Property="HorizontalAlignment"
+            Value="Center"/>
+
+    </Style>
+
+    <Style
+        x:Key="Joystick.AxisBase"
+        TargetType="{x:Type Border}">
+
+        <Setter
+            Property="Background"
+            Value="#334"/>
+
+        <Setter
+            Property="Margin"
+            Value="10"/>
+
+        <Setter
+            Property="CornerRadius"
+            Value="2"/>
+
+    </Style>
+    
+    <Style
+        x:Key="Joystick.HorizontalAxis"
+        TargetType="{x:Type Border}"
+        BasedOn="{StaticResource Joystick.AxisBase}">
+
+        <Setter
+            Property="Height"
+            Value="2"/>
+
+    </Style>
+
+    <Style
+        x:Key="Joystick.VerticalAxis"
+        TargetType="{x:Type Border}"
+        BasedOn="{StaticResource Joystick.AxisBase}">
+
+        <Setter
+            Property="Width"
+            Value="2"/>
+
+    </Style>
+
+    <Style
+        x:Key="Joystick.MinMaxTextContainer"
+        TargetType="{x:Type Border}">
+
+        <Setter
+            Property="Padding"
+            Value="5, 2"/>
+
+        <Setter
+            Property="CornerRadius"
+            Value="5"/>
+
+        <Setter
+            Property="Background"
+            Value="#191919"/>
+
+        <Setter
+            Property="BorderThickness"
+            Value="1"/>
+
+        <Setter
+            Property="BorderBrush"
+            Value="#334"/>
+
+        <Setter
+            Property="Margin"
+            Value="10"/>
+
+    </Style>
+
+    <Style
+        TargetType="{x:Type controls:Joystick}">
+
+        <Setter
+            Property="Width"
+            Value="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"/>
+
+        <Setter
+            Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate
+                    TargetType="{x:Type controls:Joystick}">
+
+                    <Border
+                        CornerRadius="20"
+                        Background="#33191919"
+                        BorderThickness="2"
+                        Padding="10">
+
+                        <Border.BorderBrush>
+
+                            <LinearGradientBrush
+                                StartPoint="0.2, 0"
+                                EndPoint="0.8, 1">
+
+                                <GradientStop
+                                    Color="#2B2B2E"
+                                    Offset="0"/>
+
+                                <GradientStop
+                                    Color="#222224"
+                                    Offset="1"/>
+
+                            </LinearGradientBrush>
+
+                        </Border.BorderBrush>
+
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition
+                                    Height="Auto"/>
+
+                                <RowDefinition/>
+
+                                <RowDefinition
+                                    Height="Auto"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Text="{TemplateBinding Title}"
+                                Style="{StaticResource Joystick.Title}"/>
+
+                            <Border
+                                x:Name="PART_Area"
+                                Grid.Row="1"
+                                Background="#2111"
+                                CornerRadius="10"
+                                Margin="0, 5, 0, 0"
+                                Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+
+                                <Grid>
+
+                                    <Border
+                                        Style="{StaticResource Joystick.HorizontalAxis}"/>
+
+                                    <Border
+                                        Style="{StaticResource Joystick.VerticalAxis}"/>
+
+                                    <Border
+                                        Style="{StaticResource Joystick.MinMaxTextContainer}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center">
+
+                                        <TextBlock
+                                            Text="{TemplateBinding MinXText}"
+                                            Style="{StaticResource Joystick.MinMaxText}"/>
+
+                                    </Border>
+
+                                    <Border
+                                        Style="{StaticResource Joystick.MinMaxTextContainer}"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center">
+
+                                        <TextBlock
+                                            Text="{TemplateBinding MaxXText}"
+                                            Style="{StaticResource Joystick.MinMaxText}"/>
+
+                                    </Border>
+
+                                    <Border
+                                        Style="{StaticResource Joystick.MinMaxTextContainer}"
+                                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Center">
+
+                                        <TextBlock
+                                            Text="{TemplateBinding MaxYText}"
+                                            Style="{StaticResource Joystick.MinMaxText}"/>
+
+                                    </Border>
+
+                                    <Border
+                                        Style="{StaticResource Joystick.MinMaxTextContainer}"
+                                        VerticalAlignment="Bottom"
+                                        HorizontalAlignment="Center">
+
+                                        <TextBlock
+                                            Text="{TemplateBinding MinYText}"
+                                            Style="{StaticResource Joystick.MinMaxText}"/>
+
+                                    </Border>
+
+                                    <Ellipse
+                                        x:Name="PART_Stick"
+                                        Fill="#99E"
+                                        Stroke="#77A"
+                                        StrokeThickness="2"
+                                        Width="10"
+                                        Height="10"
+                                        RenderTransformOrigin="0.5, 0.5">
+
+                                        <Ellipse.RenderTransform>
+
+                                            <TranslateTransform
+                                                x:Name="PART_StickPosition"/>
+
+                                        </Ellipse.RenderTransform>
+
+                                    </Ellipse>
+
+                                </Grid>
+
+                            </Border>
+
+                            <TextBlock
+                                x:Name="PART_OffsetInfo"
+                                Style="{StaticResource Joystick.Info}"
+                                Grid.Row="2"/>
+
+                        </Grid>
+
+                    </Border>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>
