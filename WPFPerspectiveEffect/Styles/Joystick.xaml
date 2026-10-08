@@ -245,7 +245,7 @@
 
                                     <Border
                                         Style="{StaticResource Joystick.MinMaxTextContainer}"
-                                        VerticalAlignment="Top"
+                                        VerticalAlignment="Bottom"
                                         HorizontalAlignment="Center">
 
                                         <TextBlock
@@ -256,7 +256,7 @@
 
                                     <Border
                                         Style="{StaticResource Joystick.MinMaxTextContainer}"
-                                        VerticalAlignment="Bottom"
+                                        VerticalAlignment="Top"
                                         HorizontalAlignment="Center">
 
                                         <TextBlock

@@ -248,7 +248,6 @@ internal static class Homography
         };
 
         /*
-         *
          * x' = (a*x + b*y + c) / (g*x + h*y + 1)
          * y' = (d*x + e*y + f) / (g*x + h*y + 1)
          */
